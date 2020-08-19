@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name" translatable="false">My Application</string>
+    <string name="ROTACAO" translatable="false">Rotação</string>
+    <string name="BOTAOENVIAR" translatable="false">Enviar</string>
+    <string name="MODOMANUAL" translatable="false">Modo Manual</string>
 </resources>

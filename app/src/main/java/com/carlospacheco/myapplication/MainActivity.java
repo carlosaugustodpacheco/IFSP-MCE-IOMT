@@ -3,6 +3,7 @@ package com.carlospacheco.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -14,10 +15,12 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 
 
 public class MainActivity extends AppCompatActivity {
-    static String    MQTTHOST = "tcp://io.adafruit.com:1883";
-    static String    USERNAME = "meganiqui";
-    static String    PASSWORD = "Needfor2";
-    String topicStr  = "ROTACAO";
+    static String    MQTTHOST = "tcp://m13.cloudmqtt.com:18372";
+    static String    USERNAME = "hdpjojno";
+    static String    PASSWORD = "G4wFxqK8acVq";
+    String topicStr  = "MODALIDADE";
+    String topicStr2  = "ROTACAO";
+    String topicStr3  = "VAZAO";
     MqttAndroidClient client;
 
     @Override
@@ -49,4 +52,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    public void MODOMANUAL (View v){
+        String topic = topicStr;
+        String message = "MODOMANUAL";
+        try {
+            client.publish(topic, message.getBytes(), 0, false);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+    }
+    public void MODOAUTOMATICO (View v){
+        String topic = topicStr;
+        String message = "MODOAUTOMATICO";
+        try {
+            client.publish(topic, message.getBytes(), 0, false);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
